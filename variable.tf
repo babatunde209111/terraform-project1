@@ -44,6 +44,27 @@ variable "private_data_subnet_az2_cidr" {
 # security group veriable 
 variable "ssh_location" {
   default     = "0.0.0.0/0"
-  description = "the ip address that can ssh into the ec2"
+  description = "the ip address that can ssh into the ec2 instances"
   type        = string
+}
+# Rds variables
+variable "database_snapshot_identifier" {
+  default     = "arn:aws:rds:us-east-1:650782131285:snapshot:fleetcart-final-snapshot"
+  description = "the database snapshot arn"
+  type        = string
+}
+variable "database_instance_class" {
+  default     = "db.t4g.micro"
+  description = "the database instance type"
+  type        = string
+}
+variable "database_instance_identifier" {
+  default     = "database-1"
+  description = "the database instance identifier"
+  type        = string
+}
+variable "multi_az_deployment" {
+  default     = false
+  description = "create a stanby db instance"
+  type        = bool
 }
