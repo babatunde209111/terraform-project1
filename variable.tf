@@ -80,4 +80,26 @@ variable "operator_email" {
   description = "a valid email address"
   type        = string
 }
+
+# Auto scaling group veriables
+variable "launch_template_name" {
+  default     = "dev-launch-template"
+  description = "name of the launch template"
+  type        = string
+}
+variable "ec2_image_id" {
+  default     = "ami-020cba7c55df1f615"
+  description = "id of the ami"
+  type        = string
+}
+variable "ec2_instance_type" {
+  default     = "t2.micro"
+  description = "the ec2 instance type"
+  type        = string
+}
+variable "ec2_key_pair_name" {
+  default     = "dev-key"
+  description = "name of the ec2 keypair"
+  type        = string
+}
   
